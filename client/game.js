@@ -185,10 +185,10 @@ socket.on("price", function(data) {
 	if (data.dualBullets == true) {
 		if (data.quadrupleBullets) {
 			$("#upgradedb").prop("disabled", true);
-			$("#upgradedb").html("총알 4배 증가");
+			$("#upgradedb").html("총알 4면 모두 발사");
 		} else {
 			$("#upgradedb").prop("disabled", true);
-			$("#upgradedb").html("총알 4배  (8000)");
+			$("#upgradedb").html("총알 4면 모두 발사  (8000)");
 			if (data.score >= 8000 && !dead) {
 				$("#upgradedb").prop("disabled", false);
 			} else {
@@ -196,7 +196,7 @@ socket.on("price", function(data) {
 			}
 		}
 	} else {
-		$("#upgradedb").html("총알 2배 증가 (5000)");
+		$("#upgradedb").html("총알 양쪽 발사 (5000)");
 		if (data.score >= 5000 && !dead) {
 			$("#upgradedb").prop("disabled", false);
 		} else {
