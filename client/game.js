@@ -18,9 +18,9 @@ for (let bgLineY = 0; bgLineY < 600; bgLineY += 20) {
 }
 ctx.fillStyle = "#000000";
 
-ctx.fillText("No game data =(", 600, 300);
+ctx.fillText("로딩중... =(", 600, 300);
 ctx.font = "30px Arial";
-ctx.fillText("Try reloading the page.", 600, 330);
+ctx.fillText("페이지를 새로고침 해보세요.", 600, 330);
 
 ctx.font = "10px Arial";
 setTimeout(function() {
@@ -71,7 +71,7 @@ function changeName() {
 		clickCooldown = 1;
 		let name = "" + $("#nameInput").val();
 		if (name == "") {
-			name = "Unnamed";
+			name = "이름없음";
 		}
 		console.log("changing name to " + name);
 		socket.emit("changeName", {
@@ -141,7 +141,7 @@ socket.on("afk?", function(data) {
 
 socket.on("price", function(data) {
 	upgHP = data.upgHP;
-	$("#upgradehp").html("Upgrade HP (" + upgHP + ")");
+	$("#upgradehp").html("체력  (" + upgHP + ")");
 	if (data.score >= upgHP && !dead) {
 		$("#upgradehp").prop("disabled", false);
 	} else {
@@ -150,10 +150,10 @@ socket.on("price", function(data) {
 
 	if (data.doubleFireSpeed == true) {
 		if (data.quadrupleFireSpeed == true) {
-			$("#upgradefs").html("Quadruple fire speed");
+			$("#upgradefs").html("총알 속도 4배 증가");
 			$("#upgradefs").prop("disabled", true);
 		} else {
-			$("#upgradefs").html("Quadruple fire speed (8000)");
+			$("#upgradefs").html("총알 속도 4배 증가 (8000)");
 			if (data.score >= 8000 && !dead) {
 				$("#upgradefs").prop("disabled", false);
 			} else {
@@ -161,7 +161,7 @@ socket.on("price", function(data) {
 			}
 		}
 	} else {
-		$("#upgradefs").html("Double fire speed (2000)");
+		$("#upgradefs").html("총알 속도 2배 증가 (2000)");
 		if (data.score >= 2000 && !dead) {
 			$("#upgradefs").prop("disabled", false);
 		} else {
@@ -172,9 +172,9 @@ socket.on("price", function(data) {
 
 	if (data.doubleBulletSize) {
 		$("#upgradeBulletSize").prop("disabled", true);
-		$("#upgradeBulletSize").html("Upgrade bullet size");
+		$("#upgradeBulletSize").html("총알 속도 증가");
 	} else {
-		$("#upgradeBulletSize").html("Upgrade bullet size (5000)");
+		$("#upgradeBulletSize").html("총알 속도 증가 (5000)");
 		if (data.score >= 5000 && !dead) {
 			$("#upgradeBulletSize").prop("disabled", false);
 		} else {
@@ -185,10 +185,10 @@ socket.on("price", function(data) {
 	if (data.dualBullets == true) {
 		if (data.quadrupleBullets) {
 			$("#upgradedb").prop("disabled", true);
-			$("#upgradedb").html("Quadruple bullets");
+			$("#upgradedb").html("총알 4배 증가");
 		} else {
 			$("#upgradedb").prop("disabled", true);
-			$("#upgradedb").html("Quadruple bullets (8000)");
+			$("#upgradedb").html("총알 4배  (8000)");
 			if (data.score >= 8000 && !dead) {
 				$("#upgradedb").prop("disabled", false);
 			} else {
@@ -196,7 +196,7 @@ socket.on("price", function(data) {
 			}
 		}
 	} else {
-		$("#upgradedb").html("Dual bullets (5000)");
+		$("#upgradedb").html("총알 2배 증가 (5000)");
 		if (data.score >= 5000 && !dead) {
 			$("#upgradedb").prop("disabled", false);
 		} else {
@@ -224,7 +224,7 @@ socket.on("newPositions", function(data) {
 	for(let i = 0; i < data.players.length; i++) {
 		// Get player stats
 		if(data.players[i].id == id) {
-			let status = "HP: " + data.players[i].hp + "/" + data.players[i].maxHp + " Score: " + data.players[i].score;
+			let status = "체력 : " + data.players[i].hp + "/" + data.players[i].maxHp + " 점수 : " + data.players[i].score;
 			scoreDiv.innerHTML = status;
 			$("#powerupCountdownTimer").html(data.players[i].powerupTime);
 			if(data.players[i].powerupTime < 0) {
