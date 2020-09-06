@@ -137,6 +137,14 @@ html {
 }
 
 .shadow {
+	color:#fff;
+  text-align: center;
+  padding:20px 60px;
+  outline: none;
+  background-color: #27ae60;
+  border: none;
+  border-radius:5px;
+  box-shadow: 0 9px #95a5a6;
 	transition: 1s;
 }
 
