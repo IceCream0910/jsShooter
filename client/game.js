@@ -330,7 +330,7 @@ socket.on("newPositions", function(data) {
 
 	if (dead) {
 		$("#death").show();
-		countdownDiv.innerHTML = "Respawn in " + respawnCooldown;
+		countdownDiv.innerHTML = respawnCooldown+"초 후 리스폰;
 	} else {
 		$("#death").hide();
 	}
