@@ -5,7 +5,7 @@
 		<meta name="keywords" content="HTML,HTML5,game,JavaScript,free,opensource,open source,github,nodejs,multiplayer,download">
 		<meta name="author" content="Zeeraa">
 		<link rel="icon" href="/client/icon.png">
-		<title>JS Shooter</title>
+		<title>재미있는 총쏘기 놀이</title>
 		<link rel="stylesheet" type="text/css" href="/client/style.css">
 	</head>
 	<body onmousemove="mouseMove(event);">
@@ -16,31 +16,30 @@
 		<div id="scoreDiv" class="noselect">undefined</div>
 		<div id="death" class="noselect">
 			<div id="dead" class="noselect">
-				You are dead
+				GAME OVER
 			</div>
 			<br>
 			<div id="countdown" class="noselect">0</div>
 		</div>
 		<div id="powerupCountdown" class="noselect">
-			Powerup time left: 
+			피버 타임: 
 			<div id="powerupCountdownTimer">
 				0
-			</div>
+			</div>초 남음
 		</div>
 
 		<div id=menuTextDiv>
 			Menu
 		</div>
 		<div id="uiDiv" class="noselect">
-			<button class="shadow" disabled="true" id="upgradefs">Double fire speed (2000)</button>
-			<button class="shadow" disabled="true" id="upgradedb">Dual bullets (5000)</button>
-			<button class="shadow" disabled="true" id="upgradehp">Upgrade HP (500)</button>
-			<button class="shadow" disabled="true" id="upgradeBulletSize">Upgrade bullet size (5000)</button>
-			<input type="checkbox" id="mlock">Lock menu
+			<button class="shadow" disabled="true" id="upgradefs">발사 속도 (2000)</button>
+			<button class="shadow" disabled="true" id="upgradedb">총알 개수 (5000)</button>
+			<button class="shadow" disabled="true" id="upgradehp">체력 강화 (500)</button>
+			<button class="shadow" disabled="true" id="upgradeBulletSize">총알 크기 (5000)</button>
+			<input type="checkbox" id="mlock">메뉴 고정
 			<br>
 			<input id="nameInput" value="Unnamed" maxlength="16" pattern="[A-Za-z0-9]" required onkeydown = "nameInputKeydown(event)">
-			<button class="shadow" id="setName">Set name</button>
-			<a href="https://github.com/AntonUden/jsShooter" target="_blank">Source code</a>
+			<button class="shadow" id="setName">이름 설정</button>
 		</div>
 
 		<script src="/client/jquery-3.3.1.min.js"></script>
